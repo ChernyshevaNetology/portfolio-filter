@@ -1,23 +1,23 @@
-import React, { FC, useState } from 'react';
-import ProjectList from '../projectList';
-import Toolbar from '../toolbar';
-import { filterProjects } from 'common/helpers';
-import { FILTERS } from 'common/constants';
-import { ProjectType } from 'types';
+import React, { FC, useState } from "react";
+import ProjectList from "../projectList";
+import Toolbar from "../toolbar";
+import { filterProjects } from "common/helpers";
+import { FILTERS } from "common/constants";
+import { ProjectType } from "types";
 
 interface Props {
   projects: ProjectType[];
 }
 
 const Portfolio: FC<Props> = ({ projects }) => {
-  const [selected, setSelected] = useState<string>('All');
+  const [selected, setSelected] = useState<string>(FILTERS[0]);
 
   const onSelectFilter = (filter: string): void => {
     setSelected(filter);
   };
 
   const projectsToRender: ProjectType[] =
-    selected === 'All' ? projects : filterProjects(projects, selected);
+    selected === "All" ? projects : filterProjects(projects, selected);
 
   return (
     <div className="container">
