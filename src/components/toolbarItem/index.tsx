@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-static-element-interactions */
-import React, { FC } from 'react';
+import React, { FC } from "react";
 
 type ToolBarItemProps = {
-  filterName: string,
-  selected: string,
-  onSelectFilter: (filter: string) => void,
+  filterName: string;
+  selected: string;
+  onSelectFilter: (filter: string) => void;
 };
 
 const ToolBarItem: FC<ToolBarItemProps> = ({
@@ -14,7 +13,7 @@ const ToolBarItem: FC<ToolBarItemProps> = ({
 }) => (
   <div
     className={
-      selected === filterName ? 'toolbar-item__active' : 'toolbar-item'
+      selected === filterName ? "toolbar-item__active" : "toolbar-item"
     }
     onClick={() => onSelectFilter(filterName)}
   >
