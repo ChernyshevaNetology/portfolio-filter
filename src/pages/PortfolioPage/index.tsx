@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { nanoid } from 'nanoid';
 import Portfolio from 'components/portfolio';
 import { PROJECTS } from 'common/constants';
@@ -9,8 +9,7 @@ const projectsWithIds = PROJECTS.map((project: ProjectType) => ({
   ...project,
 }));
 
-const PortfolioPage: FC = () => {
-  return <Portfolio projects={projectsWithIds} />;
-};
+const PortfolioPage = () => <Portfolio projects={projectsWithIds} />;
+
 
 export default PortfolioPage;
